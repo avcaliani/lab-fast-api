@@ -18,7 +18,8 @@ Small isolated experiments live in [scratchpad](https://github.com/avcaliani/scr
 .
 ├── .github/                    ci workflow + pr and issue templates
 └── pocs/
-    └── rewards-api/            fastapi, mongodb, jwt: earn and spend Schrute Bucks
+    ├── rewards-api/            fastapi, mongodb, jwt: earn and spend Schrute Bucks
+    └── rewards-ui/             front end: static html/css/js, calls rewards-api
 ```
 
 ## How to run
@@ -26,6 +27,7 @@ Small isolated experiments live in [scratchpad](https://github.com/avcaliani/scr
 Every project owns its `pyproject.toml`: run commands from its folder, always through `uv` (never outside the virtual env).
 
 - Rewards API: see [pocs/rewards-api/](pocs/rewards-api/)
+- Rewards UI: see [pocs/rewards-ui/](pocs/rewards-ui/) (static page, open `index.html`)
 
 > **PS.:** This is an unofficial fan project for learning FastAPI, not affiliated with or endorsed by NBCUniversal.
 

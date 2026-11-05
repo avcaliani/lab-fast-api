@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware
 
 from app import middlewares
@@ -34,9 +33,6 @@ app = FastAPI(
         "url": "https://opensource.org/licenses/MIT",
     },
 )
-
-# 👇 Static Files
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # 👇 Middlewares
 app.add_middleware(

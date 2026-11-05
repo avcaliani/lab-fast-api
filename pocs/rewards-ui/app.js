@@ -1,6 +1,10 @@
 'use strict';
 
+// Where rewards-api runs (`make run` or docker-compose, both on port 8000)
+const API_URL = 'http://localhost:8000';
+
 const $ = (id) => document.getElementById(id);
+document.querySelectorAll('[data-api-path]').forEach((link) => { link.href = `${API_URL}${link.dataset.apiPath}`; });
 const state = { token: null, busy: false, history: [], selected: null, view: 'response', count: 0 };
 let announcementTimer;
 
@@ -69,7 +73,7 @@ function redact(value) {
 }
 
 function curlFor(record) {
-  const lines = [`curl -X ${record.method} '${location.origin}${record.path}'`];
+  const lines = [`curl -X ${record.method} '${API_URL}${record.path}'`];
   if (record.authenticated) lines.push("  -H 'Authorization: Bearer <YOUR_TOKEN>'");
   if (record.request.body) {
     lines.push("  -H 'Content-Type: application/json'");
@@ -166,14 +170,14 @@ async function request(method, path, body = null, authenticate = true) {
   };
   let data;
   try {
-    const response = await fetch(path, { method, headers, ...(body ? { body: JSON.stringify(body) } : {}), signal: controller.signal });
+    const response = await fetch(`${API_URL}${path}`, { method, headers, ...(body ? { body: JSON.stringify(body) } : {}), signal: controller.signal });
     const raw = await response.text();
     try { data = raw ? JSON.parse(raw) : null; } catch { data = raw; }
     Object.assign(record, { status: response.status, statusText: response.statusText, ok: response.ok, response: redact(data) });
     if (response.status === 401 && authenticated) setSession(null);
     if (!response.ok) announce(`Request returned ${response.status}. See the paper trail for details.`);
   } catch (error) {
-    Object.assign(record, { status: 0, ok: false, response: { error: error.name === 'AbortError' ? 'Request timed out after 15 seconds.' : 'Could not reach the API. Check that the server is running.' } });
+    Object.assign(record, { status: 0, ok: false, response: { error: error.name === 'AbortError' ? 'Request timed out after 15 seconds.' : `Could not reach the API. Check that rewards-api is running on ${API_URL} (make run).` } });
     announce(record.response.error);
   } finally {
     clearTimeout(timeout);

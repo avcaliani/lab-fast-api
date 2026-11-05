@@ -47,14 +47,14 @@ sequenceDiagram
 ```
 
 > [!NOTE]
-> Start the API and check `http://127.0.0.1:8000`  
-> The homepage has an interactive playground to run every endpoint live,
-> plus copy-paste curl commands for each one.
+> Start the API, then open the [Rewards UI](../rewards-ui/README.md) playground  
+> to run every endpoint live, plus copy-paste curl commands for each one.  
+> Swagger docs: `http://127.0.0.1:8000/docs`
 
 <details>
 <summary>Playground preview 👇</summary>
 
-![Playground](.docs/screenshot.png)
+![Playground](../rewards-ui/.docs/screenshot.png)
 
 </details>
 
@@ -135,7 +135,6 @@ make update-deps
 │   ├── dependencies.py  # Bearer token -> current user
 │   ├── models.py        # Pydantic models
 │   └── config.py        # Dynaconf settings loader
-├── static/              # homepage with the interactive playground
 ├── resources/           # settings, Mongo init script, log config
 ├── scripts/             # one-off scripts (create demo user)
 ├── tests/               # unit tests

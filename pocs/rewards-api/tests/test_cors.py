@@ -1,7 +1,6 @@
-from app.config import settings
-
-ALLOWED_ORIGIN = settings.CORS_ORIGINS[0]
+ALLOWED_ORIGIN = "http://localhost:8000"
 DISALLOWED_ORIGIN = "https://evil.example.com"
+FILE_ORIGIN = "null"
 
 
 def _preflight(api_client, origin: str, method: str = "POST", headers: str = "Authorization"):
@@ -20,6 +19,13 @@ def test_preflight_from_allowed_origin_is_accepted(api_client):
 
     assert response.status_code == 200
     assert response.headers["access-control-allow-origin"] == ALLOWED_ORIGIN
+
+
+def test_preflight_from_rewards_ui_opened_from_disk_is_accepted(api_client):
+    response = _preflight(api_client, FILE_ORIGIN)
+
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == FILE_ORIGIN
 
 
 def test_preflight_from_disallowed_origin_is_rejected(api_client):

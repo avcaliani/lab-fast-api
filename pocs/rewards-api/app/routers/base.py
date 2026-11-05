@@ -1,5 +1,4 @@
-from fastapi import APIRouter
-from fastapi.responses import HTMLResponse
+from fastapi import APIRouter, Request
 
 from app import security as auth
 from app.models import Login
@@ -8,10 +7,9 @@ from app.services import user as service
 router = APIRouter()
 
 
-@router.get("/", response_class=HTMLResponse)
-async def root():
-    with open("static/index.html", encoding="utf8") as file:
-        return HTMLResponse(content=file.read().rstrip(), status_code=200)
+@router.get("/")
+async def root(request: Request) -> dict[str, str]:
+    return {"name": request.app.title, "version": request.app.version, "docs": "/docs"}
 
 
 @router.post("/auth")

@@ -2,7 +2,7 @@ Repo-wide rules (venv rule, lint, branches) are in the root `AGENTS.md`. Command
 
 ## Run and secrets
 
-- Run every command from `pocs/rewards-api`, `static/` and `resources/` paths are relative.
+- Run every command from `pocs/rewards-api`, `resources/` paths are relative.
 - Local `make run` needs the gitignored `resources/.secrets.toml`. Never read, print or commit it.
 - In CI and Docker the secrets come from `DYNACONF_*` env vars instead.
 

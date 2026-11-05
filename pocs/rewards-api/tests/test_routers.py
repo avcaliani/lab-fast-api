@@ -11,9 +11,11 @@ FAKE_USER = {
 }
 
 
-def test_response_ok(api_client):
+def test_root_returns_api_info(api_client):
     response = api_client.get("/")
+
     assert response.status_code == 200
+    assert set(response.json()) == {"name", "version", "docs"}
 
 
 def test_auth_with_unknown_user_returns_401_not_500(api_client, monkeypatch):

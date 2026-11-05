@@ -9,6 +9,7 @@ Python-first data engineer learning FastAPI. This repo is a lab: prioritize clar
 Read `README.md` first, it has the file tree. Each project has its own README, and pocs also have their own `AGENTS.md` with the project specifics (run location, secrets, releasing):
 
 - `pocs/rewards-api/README.md` and `pocs/rewards-api/AGENTS.md`
+- `pocs/rewards-ui/README.md`: static html/css/js, no Python, no build step
 
 ## Virtual env rule
 
