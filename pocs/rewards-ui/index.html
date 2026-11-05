@@ -6,16 +6,16 @@
   <meta name="theme-color" content="#3776ab">
   <meta name="description" content="Clock in, earn Schrute Bucks, and explore every request in the Dunder Mifflin Rewards API playground.">
   <title>Dunder Mifflin | The API office</title>
-  <link rel="icon" type="image/svg+xml" href="/static/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;icon_names=api,arrow_outward,code,coffee,dashboard,description,group,refresh,terminal,visibility,visibility_off&amp;display=block">
-  <link rel="stylesheet" href="/static/style.css">
-  <script src="/static/app.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
   <aside class="sidebar">
-    <a class="brand" href="/" aria-label="Dunder Mifflin home"><img src="/static/logo.svg" alt="" width="54" height="54"><span>DUNDER<br>MIFFLIN<span class="brand-caption">PAPER COMPANY</span></span></a>
+    <a class="brand" href="./" aria-label="Dunder Mifflin home"><img src="logo.svg" alt="" width="54" height="54"><span>DUNDER<br>MIFFLIN<span class="brand-caption">PAPER COMPANY</span></span></a>
     <div class="sidebar-label">YOUR WORKSPACE</div>
     <nav aria-label="Workspace">
       <button class="nav-link active" data-panel="office"><span class="nav-icon material-symbols-outlined" aria-hidden="true">dashboard</span> The office <span class="nav-count">01</span></button>
@@ -23,8 +23,8 @@
     </nav>
     <div class="sidebar-label resources-label">THE REFERENCE DESK</div>
     <nav aria-label="Resources">
-      <a class="nav-link" href="/docs" target="_blank" rel="noopener"><span class="nav-icon material-symbols-outlined" aria-hidden="true">api</span> Swagger docs <span class="external material-symbols-outlined" aria-hidden="true">arrow_outward</span></a>
-      <a class="nav-link" href="/redoc" target="_blank" rel="noopener"><span class="nav-icon material-symbols-outlined" aria-hidden="true">description</span> API reference <span class="external material-symbols-outlined" aria-hidden="true">arrow_outward</span></a>
+      <a class="nav-link" href="http://localhost:8000/docs" data-api-path="/docs" target="_blank" rel="noopener"><span class="nav-icon material-symbols-outlined" aria-hidden="true">api</span> Swagger docs <span class="external material-symbols-outlined" aria-hidden="true">arrow_outward</span></a>
+      <a class="nav-link" href="http://localhost:8000/redoc" data-api-path="/redoc" target="_blank" rel="noopener"><span class="nav-icon material-symbols-outlined" aria-hidden="true">description</span> API reference <span class="external material-symbols-outlined" aria-hidden="true">arrow_outward</span></a>
       <a class="nav-link" href="https://github.com/avcaliani/deep-dive-fast-api" target="_blank" rel="noopener"><span class="nav-icon material-symbols-outlined" aria-hidden="true">code</span> Source code <span class="external material-symbols-outlined" aria-hidden="true">arrow_outward</span></a>
     </nav>
     <div class="sidebar-note"><span class="tiny-heading">A NOTE FROM MANAGEMENT</span><p>Great paper.<br>Even better endpoints.</p><span class="note-signature">Scranton branch · Est. 1949</span></div>
@@ -35,7 +35,7 @@
     <main>
       <section class="hero">
         <div><div class="eyebrow"><span class="small-rule"></span> DUNDER MIFFLIN REWARDS</div><h1>Another day.<br><span>Another Schrute Buck.</span></h1><p>Your office perks, powered by Python. Sign in, check in,<br class="desktop-break"> and turn a good mood into something from the vending machine.</p><div class="hero-footer"><span class="mono">REQUEST → RESPONSE → REWARD</span><span class="hero-stamp">100% real requests</span></div></div>
-        <div class="hero-art" aria-hidden="true"><div class="art-orbit"></div><div class="floating-label">SCRANTON, PA</div><img src="/static/logo.svg" alt="" width="200" height="200"><div class="art-ground"></div><span class="art-caption">Small office. Big API energy.</span></div>
+        <div class="hero-art" aria-hidden="true"><div class="art-orbit"></div><div class="floating-label">SCRANTON, PA</div><img src="logo.svg" alt="" width="200" height="200"><div class="art-ground"></div><span class="art-caption">Small office. Big API energy.</span></div>
       </section>
       <section class="stats" aria-label="Session overview"><div class="stat"><span class="stat-label">EMPLOYEE BADGE</span><strong id="employee-status">Not clocked in</strong><span id="employee-subtitle">Sign in to get started</span></div><div class="stat balance-stat"><span class="stat-label">YOUR SCHRUTE BUCKS</span><strong><span id="balance">···</span><span class="currency"> SB</span></strong><span>Earn it. Spend it. Repeat.</span></div><div class="stat"><span class="stat-label">REQUESTS THIS SESSION</span><strong id="request-count">00</strong><span id="last-request">Your first request is waiting</span></div></section>
       <div class="workbench">
