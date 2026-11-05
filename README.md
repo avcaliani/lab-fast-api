@@ -9,15 +9,14 @@
 ![uv](https://img.shields.io/badge/uv-DE5FE9?style=flat&logo=uv&logoColor=white)
 ![License](https://img.shields.io/github/license/avcaliani/lab-fast-api?style=flat&logo=opensourceinitiative&logoColor=white&color=green)
 
-Personal [FastAPI](https://fastapi.tiangolo.com/) learning sandbox: one full app (the Office-themed Rewards API) and small isolated snippets.
+Personal [FastAPI](https://fastapi.tiangolo.com/) learning sandbox: one full app (the Office-themed Rewards API).  
+Small isolated experiments live in [scratchpad](https://github.com/avcaliani/scratchpad/tree/main/back-end/fast-api).
 
 ## Structure
 
 ```text
 .
 ├── .github/                    ci workflow + pr and issue templates
-├── snippets/                   isolated experiments, one uv project each
-│   └── web-sockets/            Dunder Mifflin PA System: intercom chat + Schrute Bucks ticker
 └── pocs/
     └── rewards-api/            fastapi, mongodb, jwt: earn and spend Schrute Bucks
 ```
@@ -27,7 +26,6 @@ Personal [FastAPI](https://fastapi.tiangolo.com/) learning sandbox: one full app
 Every project owns its `pyproject.toml`: run commands from its folder, always through `uv` (never outside the virtual env).
 
 - Rewards API: see [pocs/rewards-api/](pocs/rewards-api/)
-- Snippets: see [snippets/](snippets/)
 
 > **PS.:** This is an unofficial fan project for learning FastAPI, not affiliated with or endorsed by NBCUniversal.
 
