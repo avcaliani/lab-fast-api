@@ -47,16 +47,8 @@ sequenceDiagram
 ```
 
 > [!NOTE]
-> Start the API, then open the [Rewards UI](../rewards-ui/README.md) playground  
-> to run every endpoint live, plus copy-paste curl commands for each one.  
+> Use the [Rewards UI](../rewards-ui/README.md) to try the API: start the API, then open the UI.  
 > Swagger docs: `http://127.0.0.1:8000/docs`
-
-<details>
-<summary>Playground preview 👇</summary>
-
-![Playground](../rewards-ui/.docs/screenshot.png)
-
-</details>
 
 ## Getting Started
 
